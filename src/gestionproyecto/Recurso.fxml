@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionproyecto.RecursoController">
+   <children>
+      <AnchorPane layoutX="2.0" minHeight="0.0" minWidth="0.0" prefHeight="849.0" prefWidth="1298.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <VBox layoutX="27.0" layoutY="35.0" spacing="25.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="35.0" text="Codigo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="80.0" text="Nombre">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="186.0" text="Costo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="94.0" text="Aprobacion">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="136.0" text="Confirmacion">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="52.0" text="Tiempo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="81.0" layoutY="31.0" prefHeight="101.0" prefWidth="379.0" spacing="17.0">
+               <children>
+                  <TextField fx:id="txtId" layoutX="81.0" layoutY="31.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtNombreRecurso" layoutX="81.0" layoutY="76.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtCosto" layoutX="81.0" layoutY="173.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <HBox>
+                     <children>
+                        <RadioButton fx:id="rbAprobOk" layoutX="30.0" layoutY="140.0" mnemonicParsing="false" text="Si">
+                           <HBox.margin>
+                              <Insets left="25.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="rbAproNot" mnemonicParsing="false" text="No">
+                           <VBox.margin>
+                              <Insets left="20.0" top="4.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets left="25.0" top="5.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox layoutX="26.0" layoutY="285.0" prefHeight="29.0" spacing="20.0" />
+            <TextField fx:id="txtBusqueda" layoutX="27.0" layoutY="791.0" promptText="Buscar" />
+            <Button fx:id="btnBuscar" layoutX="218.0" layoutY="791.0" mnemonicParsing="false" onAction="#btnBuscarAct" prefHeight="25.0" prefWidth="158.0" text="Buscar" />
+            <Button fx:id="btnRefrescar" layoutX="835.0" layoutY="791.0" mnemonicParsing="false" onAction="#btnRefreshAct" prefHeight="25.0" prefWidth="139.0" text="Refrescar" />
+            <TableView fx:id="tablaRecurso" layoutX="26.0" layoutY="396.0" onContextMenuRequested="#contextMenuAct" onMouseClicked="#contextMenuClick" prefHeight="373.0" prefWidth="1232.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="82.0" text="ID" />
+                  <TableColumn fx:id="colNombRec" prefWidth="256.0" text="Nombre del recurso" />
+                  <TableColumn fx:id="colAprobacion" prefWidth="206.0" text="Requiere aprobacion" />
+                  <TableColumn fx:id="colConfirmacion" prefWidth="230.0" text="Requiere confirmacion" />
+                  <TableColumn fx:id="colTiempo" prefWidth="225.0" text="Tiempo de uso" />
+                  <TableColumn fx:id="colCosto" prefWidth="122.0" text="Costo" />
+                  <TableColumn fx:id="colEstado" prefWidth="110.0" text="Estado" />
+               </columns>
+            </TableView>
+            <Label fx:id="labelResultados" alignment="CENTER_RIGHT" layoutX="1074.0" layoutY="787.0" prefHeight="34.0" prefWidth="156.0" text="Resultados:0" />
+            <Label layoutX="588.0" layoutY="16.0" text="Estado">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rbActivo" layoutX="588.0" layoutY="49.0" mnemonicParsing="false" text="Activo" />
+            <RadioButton fx:id="rbDesactivo" layoutX="675.0" layoutY="49.0" mnemonicParsing="false" text="Desactivo" />
+            <Button fx:id="bntRegresar" layoutX="1119.0" layoutY="41.0" mnemonicParsing="false" onAction="#bntRegresarAct" prefHeight="25.0" prefWidth="139.0" text="Regresar" />
+            <Button fx:id="btnCrear" layoutX="55.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnCrearAct" prefHeight="25.0" prefWidth="116.0" text="Guardar" />
+            <Button fx:id="btnModificar" layoutX="191.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnModAct" prefHeight="25.0" prefWidth="116.0" text="Modificar" />
+            <Button fx:id="btnActivo" layoutX="327.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnActivoAct" prefHeight="25.0" prefWidth="116.0" text="Inactivar/Activar" />
+            <Button fx:id="btnEmpty" layoutX="463.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnEmptyAct" prefHeight="25.0" prefWidth="116.0" text="Vaciar Campos" />
+            <RadioButton fx:id="rbConOk" layoutX="113.0" layoutY="203.0" mnemonicParsing="false" text="Si" />
+            <RadioButton fx:id="rbConNot" layoutX="161.0" layoutY="203.0" mnemonicParsing="false" text="No" />
+            <TextField fx:id="txtTiempo" layoutX="87.0" layoutY="240.0" prefHeight="25.0" prefWidth="373.0" />
+            <Button fx:id="btnImprimir" layoutX="421.0" layoutY="792.0" mnemonicParsing="false" onAction="#btnImprimirAct" prefHeight="25.0" prefWidth="158.0" text="Reporte" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

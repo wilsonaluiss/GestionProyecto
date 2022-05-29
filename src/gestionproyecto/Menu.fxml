@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="1298.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionproyecto.MenuController">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" text="jLabel_Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnOrgaizacion" layoutX="260.0" layoutY="185.0" mnemonicParsing="false" onAction="#btnOrgaizacionAct" prefHeight="144.0" prefWidth="208.0" text="Gestionar Organización" />
+      <Button fx:id="btnUsuario" layoutX="772.0" layoutY="185.0" mnemonicParsing="false" onAction="#btnUsuarioAct" prefHeight="144.0" prefWidth="208.0" text="RegistarUsuario" />
+      <Button fx:id="btnRecurso" layoutX="260.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnRecursoAct" prefHeight="144.0" prefWidth="208.0" text="Recursos" />
+      <Button layoutX="772.0" layoutY="467.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="208.0" text="Button" />
+   </children>
+</AnchorPane>

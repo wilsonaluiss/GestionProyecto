@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="1298.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionproyecto.UsuarioController">
+   <children>
+      <AnchorPane layoutY="3.0" minHeight="0.0" minWidth="0.0" prefHeight="849.0" prefWidth="1298.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <VBox layoutX="27.0" layoutY="35.0" spacing="25.0">
+               <children>
+                  <Label layoutX="27.0" layoutY="35.0" text="Codigo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="80.0" text="Usuario">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="133.0" text="Contraseña">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="186.0" text="Nombre">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" text="Correo">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox layoutX="81.0" layoutY="31.0" prefHeight="193.0" prefWidth="379.0" spacing="17.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <TextField fx:id="txtId">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <TextField fx:id="txtUsuario">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtContrasena">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtNombreUser" layoutX="81.0" layoutY="76.0">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin></TextField>
+                  <VBox spacing="16.0">
+                     <children>
+                        <TextField fx:id="txtCorreo" layoutX="81.0" layoutY="129.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtTelefono" layoutX="81.0" layoutY="173.0">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="txtDirreccion">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox layoutX="26.0" layoutY="285.0" prefHeight="29.0" spacing="20.0" />
+            <TextField fx:id="txtBusqueda" layoutX="34.0" layoutY="795.0" promptText="Buscar" />
+            <Button fx:id="btnBuscar" layoutX="209.0" layoutY="795.0" mnemonicParsing="false" onAction="#btnBuscarAct" prefHeight="25.0" prefWidth="158.0" text="Buscar" />
+            <Button fx:id="btnRefrescar" layoutX="843.0" layoutY="795.0" mnemonicParsing="false" onAction="#btnRefreshAct" prefHeight="25.0" prefWidth="139.0" text="Refrescar" />
+            <TableView fx:id="tablaUsuario" layoutX="25.0" layoutY="412.0" onContextMenuRequested="#contextMenuAct" onMouseClicked="#contextMenuClick" prefHeight="373.0" prefWidth="1232.0">
+               <columns>
+                  <TableColumn fx:id="colID" prefWidth="57.0" text="ID" />
+                  <TableColumn fx:id="colTipoUsuario" prefWidth="81.0" text="Tipo Usuario" />
+                  <TableColumn fx:id="colUsuario" prefWidth="133.0" text="Usuario" />
+                  <TableColumn fx:id="colContrasena" prefWidth="113.0" text="Contraseña" />
+                  <TableColumn fx:id="colNomUser" prefWidth="173.0" text="Nombre" />
+                  <TableColumn fx:id="colCorreo" prefWidth="223.0" text="Correo" />
+                  <TableColumn fx:id="colTelefono" prefWidth="171.0" text="Telefono" />
+                  <TableColumn fx:id="colEstado" prefWidth="95.0" text="Estado" />
+                  <TableColumn fx:id="colDirreccion" prefWidth="185.0" text="Dirreccion" />
+               </columns>
+            </TableView>
+            <Label fx:id="labelResultados" alignment="CENTER_RIGHT" layoutX="1074.0" layoutY="791.0" prefHeight="34.0" prefWidth="156.0" text="Resultados:0" />
+            <Label layoutX="586.0" layoutY="20.0" text="Estado">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="rbActivo" layoutX="586.0" layoutY="53.0" mnemonicParsing="false" text="Activo" />
+            <RadioButton fx:id="rbDesactivo" layoutX="746.0" layoutY="53.0" mnemonicParsing="false" text="Desactivo" />
+            <Button fx:id="bntRegresar" layoutX="1119.0" layoutY="41.0" mnemonicParsing="false" onAction="#bntRegresarAct" prefHeight="25.0" prefWidth="139.0" text="Regresar" />
+            <VBox layoutX="27.0" layoutY="245.0" spacing="22.0">
+               <children>
+                  <Label layoutX="31.0" layoutY="245.0" text="Telefono">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="285.0" text="Direccion">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="331.0" text="Tipo Usuario">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <RadioButton fx:id="rbAdmin" layoutX="116.0" layoutY="327.0" mnemonicParsing="false" text="Administrador" />
+            <RadioButton fx:id="rbUser" layoutX="238.0" layoutY="327.0" mnemonicParsing="false" text="Usuario" />
+            <Button fx:id="btnCrear" layoutX="54.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnCrearAct" prefHeight="25.0" prefWidth="116.0" text="Guardar" />
+            <Button fx:id="btnModificar" layoutX="190.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnModAct" prefHeight="25.0" prefWidth="116.0" text="Modificar" />
+            <Button fx:id="btnActivo" layoutX="326.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnActivoAct" prefHeight="25.0" prefWidth="116.0" text="Inactivar/Activar" />
+            <Button fx:id="btnEmpty" layoutX="462.0" layoutY="367.0" mnemonicParsing="false" onAction="#btnEmptyAct" prefHeight="25.0" prefWidth="116.0" text="Vaciar Campos" />
+            <Button fx:id="btnImprimir" layoutX="441.0" layoutY="796.0" mnemonicParsing="false" onAction="#btnImprimirAct" prefHeight="25.0" prefWidth="158.0" text="Imprimir" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
